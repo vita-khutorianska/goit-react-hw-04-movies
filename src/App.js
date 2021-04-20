@@ -1,10 +1,10 @@
 // import './App.css';
-import { lazy, Suspense } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
 import { NavLink, Route, Redirect, Switch } from 'react-router-dom';
 import styles from './App.module.css';
 const HomePage = lazy(() => import('./pages/HomePage'));
 const MoviesPage = lazy(() => import('./pages/MoviesPage'));
-const MovieDetailsPage = lazy(() => import('./pages/MovieDetailsPage '));
+const MovieDetailsPage = lazy(() => import('./Pages/MoviePage'));
 
 const App = () => {
   return (

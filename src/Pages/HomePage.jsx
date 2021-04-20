@@ -1,9 +1,8 @@
-// import { renderIntoDocument } from 'react-dom/test-utils';
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
 import axios from 'axios';
 
-class HomePages extends Component {
+class HomePage extends Component {
   state = {
     films: [],
   };
@@ -16,7 +15,7 @@ class HomePages extends Component {
   }
 
   render() {
-    console.log('Home this.props.match.url', this.props.match.url);
+    // console.log('Home this.props.match.url', this.props.match.url);
     const { films } = this.state;
     return (
       <ul>
@@ -25,7 +24,10 @@ class HomePages extends Component {
             <li key={id}>
               <Link to={`${this.props.match.url}/${id}`}>
                 {original_title}
-                {/* <img src={`https://image.tmdb.org/t/p/w300/${poster_path}`} alt="" /> */}
+                <img
+                  src={`https://image.tmdb.org/t/p/w300/${poster_path}`}
+                  alt=""
+                />
               </Link>
             </li>
           );
@@ -35,4 +37,4 @@ class HomePages extends Component {
   }
 }
 
-export default HomePages;
+export default HomePage;
