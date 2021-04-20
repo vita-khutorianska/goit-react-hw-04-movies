@@ -1,4 +1,4 @@
-import { renderIntoDocument } from 'react-dom/test-utils';
+// import { renderIntoDocument } from 'react-dom/test-utils';
 import { Link } from 'react-router-dom';
 import { Component } from 'react';
 import axios from 'axios';
@@ -20,7 +20,6 @@ class HomePages extends Component {
     const { films } = this.state;
     return (
       <ul>
-        {' '}
         {films.map(({ id, original_title, poster_path }) => {
           return (
             <li key={id}>
