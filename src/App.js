@@ -2,9 +2,10 @@
 import { lazy, Suspense } from 'react';
 import { NavLink, Route, Redirect, Switch } from 'react-router-dom';
 import styles from './App.module.css';
-const HomePage = lazy(() => import('./pages/HomePage'));
-const MoviesPage = lazy(() => import('./pages/MoviesPage'));
-const MovieDetailsPage = lazy(() => import('./Pages/MoviePage'));
+import routes from './Components/Routes';
+// const HomePage = lazy(() => import('./Pages/HomePage'));
+// const MoviesPage = lazy(() => import('./Pages/MoviesPage'));
+// const MovieDetailsPage = lazy(() => import('./Pages/MoviePage'));
 
 const App = () => {
   return (
@@ -32,10 +33,9 @@ const App = () => {
       </ul>
       <Suspense fallback={<p>Is loading....</p>}>
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/MoviesPage" component={MoviesPage} />
-          <Route path="/MoviesPage/:movieId" component={MovieDetailsPage} />
-          <Redirect to="/" />
+          {routes.map(({ path, exact, component }) => (
+            <Route key={path} exact={exact} path={path} component={component} />
+          ))}
         </Switch>
       </Suspense>
     </div>
