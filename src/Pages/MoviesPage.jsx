@@ -1,6 +1,6 @@
 // import { Link } from 'react-router-dom';
 import { Component } from 'react';
-import fetchMovieSearch from '../Components/ApiMovie';
+import fetchSearchFilm from '../Components/ApiMovie';
 import SearchBar from '../Components/SearchBar';
 import MovieList from '../Components/MovieList';
 import queryString from 'query-string';
@@ -28,8 +28,8 @@ class MoviesPage extends Component {
     }
   }
   fetchFilm = searchFilm => {
-    fetchMovieSearch
-      .fetchMovieSearch(searchFilm)
+    fetchSearchFilm
+      .fetchSearchFilm(searchFilm)
       .then(results =>
         this.setState(prevState => ({
           films: [...prevState.films, ...results],
