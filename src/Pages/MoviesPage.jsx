@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Component } from 'react';
 import fetchMovieSearch from '../Components/ApiMovie';
 import SearchBar from '../Components/SearchBar';

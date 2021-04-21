@@ -1,13 +1,7 @@
 import { lazy } from 'react';
 const HomePages = lazy(() => import('../../Pages/HomePage'));
-const MoviesPage = lazy(() =>
-  import('../../Pages/MoviesPage' /* webpackChunkName: "MoviesPage" */),
-);
-const MovieDetailsPage = lazy(() =>
-  import(
-    '../../Pages/MovieDetailsPage' /* webpackChunkName: "MovieDetailsPage" */
-  ),
-);
+const MoviesPage = lazy(() => import('../../Pages/MoviesPage'));
+const MovieDetailsPage = lazy(() => import('../../Pages/MovieDetailsPage'));
 //const Cast = lazy(() => import("../../Components/Cast/Cast"));
 
 const routes = [

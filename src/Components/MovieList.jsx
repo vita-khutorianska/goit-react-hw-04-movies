@@ -4,7 +4,6 @@ import style from '../Pages/Movie.module.css';
 const MoviesList = ({ films, location }) => {
   return (
     <ul className={style.filmList}>
-      {' '}
       {films.length > 0 &&
         films.map(({ id, original_title, poster_path }) => {
           return (

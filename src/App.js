@@ -1,6 +1,6 @@
 // import './App.css';
-import { lazy, Suspense } from 'react';
-import { NavLink, Route, Redirect, Switch } from 'react-router-dom';
+import { Suspense } from 'react';
+import { NavLink, Route, Switch } from 'react-router-dom';
 import styles from './App.module.css';
 import routes from './Components/Routes';
 // const HomePage = lazy(() => import('./Pages/HomePage'));
