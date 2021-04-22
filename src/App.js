@@ -2,7 +2,7 @@
 import { Suspense } from 'react';
 import { NavLink, Route, Switch } from 'react-router-dom';
 import styles from './App.module.css';
-import routes from './Components/Routes';
+import routes from './Components/Routes/Routes';
 // const HomePage = lazy(() => import('./Pages/HomePage'));
 // const MoviesPage = lazy(() => import('./Pages/MoviesPage'));
 // const MovieDetailsPage = lazy(() => import('./Pages/MoviePage'));

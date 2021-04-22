@@ -1,7 +1,7 @@
 import { Component, lazy, Suspense } from 'react';
 import fetchMovieDetails from '../Components/ApiMovie';
-import routes from '../Components/Routes';
-import { NavLink, Route, Switch, withRouter } from 'react-router-dom';
+import routes from '../Components/Routes/Routes';
+import { Link, NavLink, Route, Switch, withRouter } from 'react-router-dom';
 import style from '../Pages/Movie.module.css';
 const Cast = lazy(() => import('../Components/Cast'));
 const Reviews = lazy(() => import('../Components/Reviews'));
