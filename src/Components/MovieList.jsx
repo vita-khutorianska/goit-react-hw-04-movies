@@ -1,26 +1,32 @@
 import { Link, withRouter } from 'react-router-dom';
-import style from '../Pages/Movie.module.css';
+import style from './MovieList.module.css';
 
 const MoviesList = ({ films, location }) => {
   return (
-    <ul className={style.filmList}>
-      {' '}
-      {films.length > 0 &&
-        films.map(({ id, original_title, poster_path }) => {
-          return (
-            <li className={style.filmItem} key={id}>
-              <Link
-                to={{
-                  pathname: `/MoviesPage/${id}`,
-                  state: { from: location },
-                }}
-              >
-                {original_title}
-              </Link>
-            </li>
-          );
-        })}
-    </ul>
+    <div className={style.grid}>
+      <ul className={style.imageGallery}>
+        {films.length > 0 &&
+          films.map(({ id, original_title, poster_path }) => {
+            return (
+              <li className={style.imageGalleryItem} key={id}>
+                <Link
+                  to={{
+                    pathname: `/MoviesPage/${id}`,
+                    state: { from: location },
+                  }}
+                >
+                  <img
+                    className={style.imageGalleryItem_image}
+                    src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+                    alt="movie text"
+                  />
+                  <h2 className={style.movieTitle}>{original_title}</h2>
+                </Link>
+              </li>
+            );
+          })}
+      </ul>
+    </div>
   );
 };
 export default withRouter(MoviesList);
