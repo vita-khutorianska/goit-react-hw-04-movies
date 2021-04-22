@@ -1,5 +1,7 @@
 import { lazy } from 'react';
-const HomePages = lazy(() => import('../../Pages/HomePage'));
+const HomePages = lazy(() =>
+  import('../../Pages/HomePage' /* webpackChunkName: "HomePages" */),
+);
 const MoviesPage = lazy(() => import('../../Pages/MoviesPage'));
 const MovieDetailsPage = lazy(() => import('../../Pages/MovieDetailsPage'));
 //const Cast = lazy(() => import("../../Components/Cast/Cast"));

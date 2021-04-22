@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import MovieList from '../Components/MovieList';
+
 import { Component } from 'react';
 import axios from 'axios';
 
-class HomePage extends Component {
+class HomePages extends Component {
   state = {
     films: [],
   };
@@ -15,26 +17,15 @@ class HomePage extends Component {
   }
 
   render() {
-    // console.log('Home this.props.match.url', this.props.match.url);
+    console.log('Home this.props.match.url', this.props.match.url);
     const { films } = this.state;
     return (
-      <ul>
-        {films.map(({ id, original_title, poster_path }) => {
-          return (
-            <li key={id}>
-              <Link to={`${this.props.match.url}/${id}`}>
-                {original_title}
-                <img
-                  src={`https://image.tmdb.org/t/p/w300/${poster_path}`}
-                  alt=""
-                />
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      <>
+        <h1>Trending films</h1>
+        <MovieList films={films} />
+      </>
     );
   }
 }
 
-export default HomePage;
+export default HomePages;

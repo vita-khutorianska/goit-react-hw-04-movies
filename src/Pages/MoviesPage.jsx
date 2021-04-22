@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Component } from 'react';
 import fetchSearchFilm from '../Components/ApiMovie';
 import SearchBar from '../Components/SearchBar';
@@ -7,7 +7,7 @@ import queryString from 'query-string';
 import { withRouter } from 'react-router-dom';
 
 const getSearchQuery = props => queryString.parse(props.location.search);
-// console.log("getSearchQuery", getSearchQuery);
+
 class MoviesPage extends Component {
   state = {
     films: [],
@@ -35,7 +35,7 @@ class MoviesPage extends Component {
           films: [...prevState.films, ...results],
         })),
       )
-      .catch(error => this.setState({ error: true }));
+      .catch(error => console.log(error));
   };
   addFilm = film => {
     if (film !== '') {
@@ -51,11 +51,11 @@ class MoviesPage extends Component {
   };
 
   render() {
-    const { films, error } = this.state;
+    const { films } = this.state;
     return (
       <div>
         <SearchBar onSubmit={this.addFilm} />
-        {error && <MovieList films={films} />}
+        {<MovieList films={films} />}
       </div>
     );
   }
