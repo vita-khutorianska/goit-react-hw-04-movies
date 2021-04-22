@@ -14,7 +14,7 @@
 }
 
 .App-link {
-  color: #ca61fb;
+  color: #052e3a;
 }
 
 @keyframes App-logo-spin {
@@ -24,4 +24,29 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.NavLink {
+  font-size: 20px;
+  color: currentColor;
+}
+
+.NavLinkActive {
+  color: rgb(85, 7, 33);
+}
+.list {
+  display: flex;
+  list-style: none;
+}
+.item {
+  margin-left: 20px;
+}
+.container {
+  width: 1200px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
 }
